@@ -9,13 +9,13 @@
     author_email="spiritloose@gmail.com"
     author_link="http://spiritloose.net/"
     author_location="Tokyo, Japan"
-    screenshot="http://spiritloose.net/google-gadgets/bloglines/screenshot.png"
-    thumbnail="http://spiritloose.net/google-gadgets/bloglines/thumbnail.png"
+    screenshot="http://ldr-notifier-gadget.googlecode.com/svn/trunk/screenshot.png"
+    thumbnail="http://ldr-notifier-gadget.googlecode.com/svn/trunk/thumbnail.png"
     scaling="false"
     scrolling="false">
     <Require feature="dynamic-height"/>
-    <Locale messages="http://spiritloose.net/google-gadgets/ldr/ALL_ALL.xml"/>
-    <Locale lang="ja" messages="http://spiritloose.net/google-gadgets/ldr/ja_ALL.xml"/>
+    <Locale messages="http://ldr-notifier-gadget.googlecode.com/svn/trunk/ALL_ALL.xml"/>
+    <Locale lang="ja" messages="http://ldr-notifier-gadget.googlecode.com/svn/trunk/ja_ALL.xml"/>
   </ModulePrefs>
   <UserPref name="user" display_name="livedoor ID" required="true"/>
   <Content type="html">
