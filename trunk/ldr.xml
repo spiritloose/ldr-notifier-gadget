@@ -26,7 +26,7 @@
             _gel('message__MODULE_ID__').innerHTML = "__MSG_loading__";
             var prefs__MODULE_ID__ = new _IG_Prefs(__MODULE_ID__);
             var user__MODULE_ID__ = prefs__MODULE_ID__.getString('user');
-            _IG_FetchContent('http://rpc.reader.livedoor.com/notify?user='+user__MODULE_ID__,
+            _IG_FetchContent('http://rpc.reader.livedoor.com/notify?user='+user__MODULE_ID__+'&t='+new Date().getTime(),
             function(content) {
               var count__MODULE_ID__ = content.split('|')[1];
               var message__MODULE_ID__ = '<img src="http://reader.livedoor.com/favicon.ico" style="vertical-align: middle;" />&nbsp;';
