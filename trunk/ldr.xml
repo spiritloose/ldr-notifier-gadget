@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="livedoor Reader"
+    title_url="http://reader.livedoor.com/reader/"
+    directory_title="livedoor Reader Notifier"
+    height="50"
+    description="__MSG_description__"
+    author="Jiro Nishiguchi"
+    author_email="spiritloose@gmail.com"
+    author_link="http://spiritloose.net/"
+    author_location="Tokyo, Japan"
+    screenshot="http://ldr-notifier-gadget.googlecode.com/svn/trunk/screenshot.png"
+    thumbnail="http://ldr-notifier-gadget.googlecode.com/svn/trunk/thumbnail.png"
+    scaling="false"
+    scrolling="false">
+    <Require feature="dynamic-height"/>
+    <Locale messages="http://ldr-notifier-gadget.googlecode.com/svn/trunk/ALL_ALL.xml"/>
+    <Locale lang="ja" messages="http://ldr-notifier-gadget.googlecode.com/svn/trunk/ja_ALL.xml"/>
+  </ModulePrefs>
+  <UserPref name="user" display_name="livedoor ID" required="true"/>
+  <Content type="html">
+    <![CDATA[
+        <p id="message__MODULE_ID__"></p>
+        <script type="text/javascript">
+          _IG_RegisterOnloadHandler(function() {
+            _gel('message__MODULE_ID__').innerHTML = "__MSG_loading__";
+            var prefs__MODULE_ID__ = new _IG_Prefs(__MODULE_ID__);
+            var user__MODULE_ID__ = prefs__MODULE_ID__.getString('user');
+            _IG_FetchContent('http://rpc.reader.livedoor.com/notify?user='+user__MODULE_ID__,
+            function(content) {
+              var count__MODULE_ID__ = content.split('|')[1];
+              var message__MODULE_ID__ = '<img src="http://reader.livedoor.com/favicon.ico" style="vertical-align: middle;" />&nbsp;';
+              if (count__MODULE_ID__ == 0) {
+                message__MODULE_ID__ += "__MSG_noitems__";
+              } else {
+                message__MODULE_ID__ += '<a href="http://reader.livedoor.com/reader/" target="_blank">'+count__MODULE_ID__+'&nbsp;__MSG_newitems__</a>';
+              }
+              _gel('message__MODULE_ID__').innerHTML = message__MODULE_ID__;
+            });
+          });
+        </script>
+    ]]>
+  </Content>
+</Module>
