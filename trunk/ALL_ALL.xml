@@ -3,4 +3,5 @@
   <msg name="loading">loading...</msg>
   <msg name="noitems">No New Items</msg>
   <msg name="newitems">New Items</msg>
+  <msg name="invalid_user">livedoor ID invalid</msg>
 </messagebundle>
