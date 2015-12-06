@@ -1,0 +1,1 @@
+livedoor Reader Notifier Google Gadget.
